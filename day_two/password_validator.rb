@@ -68,6 +68,7 @@ def valid_password?(password_to_validate, style)
   if style == 1
     return (x.to_i..y.to_i).include?(password.count(rule))
   elsif style == 2
+    # ^ is the xor operator as we want ONLY one of the positions to contain the "rule" letter
     return (password[x.to_i - 1] == rule) ^ (password[y.to_i - 1] == rule)
   end
 end
